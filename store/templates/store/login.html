@@ -1,0 +1,38 @@
+{% extends "store/main.html" %} {% block content %} {% load static %} <link
+type='text/css' src={% static "css/style.css" %}>
+<div class="content-section">
+  {% if messages %}
+  {% for message in messages %}
+  {{message}}
+  {% endfor %}
+  {% endif %}
+
+  <form method="POST" action="">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Log In</legend>
+
+      <div class="form-group">
+        <label>Username</label>
+        <br />
+        <input type="text" placeholder="Username" name='username' />
+        <div class="invalid-feedback"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <br />
+        <input type="text" placeholder="********" name='password'/>
+      </div>
+      
+      <input type='submit' value='Log In' />
+    </fieldset>
+  </form>
+
+</div>
+<div class="border-top pt-3">
+  <small class="text-muted">
+    Create An Acount! <a class="ml-2" href={% url "register" %}>Sign Up</a>
+  </small>
+</div>
+{% endblock content %}

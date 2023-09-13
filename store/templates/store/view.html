@@ -1,0 +1,34 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .room-container{
+        display:grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-gap: 50px;
+    }
+</style>
+
+<div class='room-container'>
+    <div>
+        <img class="box-element product" width = "800" height = "400" src="{{item.image.url}}">
+        <div >
+            <h6><strong>{{item.name}}</strong></h6>
+            <hr>
+            <button data-product="{{item.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+            <h4 style="display: inline-block; float: right"><strong>${{item.price}}</strong></h4>
+        </div>
+    </div>
+
+    <div>
+        <h1><strong>Description:</strong></h1>
+        <br/>
+        <h4>{{item.description}}</h4>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}
+
