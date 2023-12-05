@@ -11,7 +11,6 @@ from .forms import MyUserForm
 from django.contrib.auth.forms import UserCreationForm
 
 def store(request):
-	
 	data = cartData(request)
 
 	cartItems = data['cartItems']
