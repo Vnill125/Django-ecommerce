@@ -12,7 +12,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 def store(request):
 	data = cartData(request)
-
+	
 	cartItems = data['cartItems']
 	order = data['order']
 	items = data['items']
