@@ -33,7 +33,6 @@ def ItemView(request, pk):
     context = {'item': item, 'cartItems':cartItems}
     return render(request, 'store/view.html', context)
 
-
 def cart(request):
 	data = cartData(request)
 
